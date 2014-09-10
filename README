@@ -1,0 +1,116 @@
+﻿# =======================================================================
+# CODE FOR THE RESEARCH PROJECT
+# "Multiple Classifier Systems using OPF"
+# 
+# by Moacir Ponti (ICMC/USP)
+#
+# The LibOPF package was used to develop the algorithms
+#
+# 2011-2014
+# =======================================================================
+
+========================================
+1. Installation
+========================================
+
+On Unix systems, after decompressing the code into a directory, and then 
+type 'make' to build the program 'comb2' into the /bin directory. 
+Run it without arguments to show their usage. 
+
+
+========================================
+2. Programs included
+========================================
+
+In this README we will include the programs created to run the experiments. 
+
+comb2:
+
+	This is a program to execute classifier combination using OPF with
+confidence scores. It will run with 20, 40 and 80 classifiers, and output
+the balanced accuracies for Majority Voting, Weighted Majority Voting,
+Average, Weighted Average.
+
+
+-----------------------------------------------
+'comb2' Usage
+-----------------------------------------------
+
+Usage: ./comb2 <P1>
+
+P1: dataset file name
+
+
+========================================
+3. OPF file format for datasets
+========================================
+
+The datasets used in the experiments are included in the 'bin' folder:
+1) Banana-shaped: file 'Banana.opf'
+2) Lithuanian: file 'Lithu.opf'
+3) Gaussian: file 'Gauss.opf'
+4) Corel-GCH: file 'Corel1000GCH.opf'
+
+
+
+========================================
+4. OPF file format for datasets
+========================================
+
+The original dataset and its parts training, evaluation and test sets
+must be in the following BINARY file format:
+
+<# of samples> <# of labels> <# of features> 
+<0> <label> <feature 1 from element 0> <feature 2 from element 0> ...
+<1> <label> <feature 1 from element 1> <feature 2 from element 1> ...
+.
+.
+<i> <label> <feature 1 from element i> <feature 2 from element i> ...
+<i+1> <label> <feature 1 from element i+1> <feature 2 from element i+1> ...
+.
+.
+<n-1> <label> <feature 1 from element n-1> <feature 2 from element n-1> ... 
+
+The first number of each line, <0>, <1>, ... <n-1>, is a sample
+identifier (for n samples in the dataset), which is used in the case
+of precomputed distances. However, the identifier must be specified
+anyway. For unlabeled datasets, please use label 0 for all samples
+(unsupervised OPF).
+
+Example: Suppose that you have a dataset with 5 samples, distributed
+into 3 classes, with 2 elements from label 1, 2 elements from label 2
+and 1 element from label 3. Each sample is represented by a feature
+vector of size 2. So, the OPF file format should look like as below:
+
+5	3	2
+0	1	0.21	0.45
+1	1	0.22	0.43
+2	2	0.67	1.12
+3	2	0.60	1.11
+4	3	0.79	0.04
+
+Comment #1: Note that, the file must be binary with no blank
+spaces. This ASCII representation is just for illustration.
+
+Comment #2: The first line of the file, 5 3 2, contains, respectively,
+the dataset size, the number of labels (classes) and the number of
+features in the feature vectors. The remaining lines contain the
+sample identifier (integer from 0 to n-1, in which n is the dataset
+size), its label and the feature values for each sample.
+
+
+
+========================================
+5. Accuracy computation
+========================================
+
+If you intend to compare results, it is important to note that the 
+accuracy here is computed by a balanced accuracy, of each class 
+with respect of all other classes. 
+
+It takes into account that the classes may have different sizes. 
+If there are two classes, for example, with very different sizes 
+and a classifier always assigns the label of the largest class, 
+its accuracy will fall drastically due to the high error rate on 
+the smallest class. 
+
