@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libComb2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/libComb2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++0x" />
+					<Add option="-g" />
+					<Add option="-std=gnu++0x" />
+					<Add directory="include/Bagging" />
+					<Add directory="include/Classifiers" />
+					<Add directory="include" />
+					<Add directory="include/DataStructures" />
+					<Add directory="src/Bagging" />
+					<Add directory="src/Classifiers" />
+					<Add directory="src/DataStructures" />
+					<Add directory="src" />
+					<Add directory="src/AdaBoost" />
+					<Add directory="include/AdaBoost" />
+					<Add directory="include/Tests" />
+					<Add directory="src/Tests" />
+				</Compiler>
+				<Linker>
+					<Add option="-lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/libComb2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="/usr/include/opencv" />
+			<Add directory="include" />
+			<Add directory="src" />
+			<Add directory="include/Classifiers" />
+			<Add directory="include/DataStructures" />
+			<Add directory="src/Classifiers" />
+			<Add directory="src/DataStructures" />
+			<Add directory="LibOPF/include" />
+			<Add directory="LibOPF/include/util" />
+		</Compiler>
+		<Linker>
+			<Add option="-lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann" />
+			<Add library="LibOPF/lib/libOPF.a" />
+		</Linker>
+		<Unit filename="include/AdaBoost/AdaBoost.hpp" />
+		<Unit filename="include/AdaBoost/AdaBoostM1.hpp" />
+		<Unit filename="include/Algoritmo1.hpp" />
+		<Unit filename="include/Algoritmo2.hpp" />
+		<Unit filename="include/Bagging/AttributeBagging.hpp" />
+		<Unit filename="include/Bagging/Bagging.hpp" />
+		<Unit filename="include/Bagging/EBBagging.hpp" />
+		<Unit filename="include/Bagging/IRBagging.hpp" />
+		<Unit filename="include/Bagging/IRBaggingOver.hpp" />
+		<Unit filename="include/Bagging/RBBagging.hpp" />
+		<Unit filename="include/Classifiers/Classifier.hpp" />
+		<Unit filename="include/Classifiers/DecisionTree.hpp" />
+		<Unit filename="include/Classifiers/KNN.hpp" />
+		<Unit filename="include/Classifiers/MLP.hpp" />
+		<Unit filename="include/Classifiers/NormalBayes.hpp" />
+		<Unit filename="include/Classifiers/OPF.hpp" />
+		<Unit filename="include/Classifiers/OpenCVClassifier.hpp" />
+		<Unit filename="include/DataStructures/ConfusionMatrix.hpp" />
+		<Unit filename="include/DataStructures/Data.hpp" />
+		<Unit filename="include/Predictor.hpp" />
+		<Unit filename="include/Tests/tests.hpp" />
+		<Unit filename="include/libComb.hpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/AdaBoost/AdaBoost.cpp" />
+		<Unit filename="src/AdaBoost/AdaBoostM1.cpp" />
+		<Unit filename="src/Algoritmo1.cpp" />
+		<Unit filename="src/Algoritmo2.cpp" />
+		<Unit filename="src/Bagging/AttributeBagging.cpp" />
+		<Unit filename="src/Bagging/Bagging.cpp" />
+		<Unit filename="src/Bagging/EBBagging.cpp" />
+		<Unit filename="src/Bagging/IRBagging.cpp" />
+		<Unit filename="src/Bagging/IRBaggingOver.cpp" />
+		<Unit filename="src/Bagging/RBBagging.cpp" />
+		<Unit filename="src/Classifiers/Classifier.cpp" />
+		<Unit filename="src/Classifiers/DecisionTree.cpp" />
+		<Unit filename="src/Classifiers/KNN.cpp" />
+		<Unit filename="src/Classifiers/MLP.cpp" />
+		<Unit filename="src/Classifiers/NormalBayes.cpp" />
+		<Unit filename="src/Classifiers/OPF.cpp" />
+		<Unit filename="src/Classifiers/OpenCVClassifier.cpp" />
+		<Unit filename="src/DataStructures/ConfusionMatrix.cpp" />
+		<Unit filename="src/DataStructures/Data.cpp" />
+		<Unit filename="src/Tests/tests.cpp" />
+		<Unit filename="src/libComb.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

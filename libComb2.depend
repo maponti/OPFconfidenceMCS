@@ -1,0 +1,397 @@
+# depslib dependency file v1.0
+1374634901 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/main.cpp
+	"Data.hpp"
+	"KNN.hpp"
+	"NormalBayes.hpp"
+	"OPF.hpp"
+	"Bagging.hpp"
+	"DecisionTree.hpp"
+	"MLP.hpp"
+	"AdaBoostM1.hpp"
+	"ConfusionMatrix.hpp"
+	"Algoritmo1.hpp"
+	"Algoritmo2.hpp"
+	"IRBagging.hpp"
+	"RBBagging.hpp"
+	"EBBagging.hpp"
+	"IRBaggingOver.hpp"
+
+1374634987 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Classifiers/Classifier.cpp
+	"Classifier.hpp"
+
+1374634061 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Classifiers/Classifier.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	<cmath>
+	"Predictor.hpp"
+	"Data.hpp"
+
+1355173641 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/DataStructures/Data.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+
+1355683196 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Classifiers/KNN.cpp
+	"KNN.hpp"
+
+1355683157 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Classifiers/KNN.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	"Data.hpp"
+	"OpenCVClassifier.hpp"
+	<cv.h>
+	<highgui.h>
+	<ml.h>
+	<cvaux.h>
+
+1303997574 /usr/include/opencv/cv.h
+	"opencv2/core/core_c.h"
+	"opencv2/core/core.hpp"
+	"opencv2/imgproc/imgproc_c.h"
+	"opencv2/imgproc/imgproc.hpp"
+	"opencv2/video/tracking.hpp"
+	"opencv2/features2d/features2d.hpp"
+	"opencv2/flann/flann.hpp"
+	"opencv2/calib3d/calib3d.hpp"
+	"opencv2/objdetect/objdetect.hpp"
+	"opencv2/legacy/compat.hpp"
+	"opencv2/core/internal.hpp"
+
+1303997574 /usr/include/opencv/highgui.h
+	"opencv2/core/core_c.h"
+	"opencv2/core/core.hpp"
+	"opencv2/highgui/highgui_c.h"
+	"opencv2/highgui/highgui.hpp"
+
+1303997574 /usr/include/opencv/ml.h
+	"opencv2/core/core_c.h"
+	"opencv2/core/core.hpp"
+	"opencv2/ml/ml.hpp"
+
+1303997574 /usr/include/opencv/cvaux.h
+	"opencv2/core/core_c.h"
+	"opencv2/core/core.hpp"
+	"opencv2/imgproc/imgproc_c.h"
+	"opencv2/imgproc/imgproc.hpp"
+	"opencv2/video/tracking.hpp"
+	"opencv2/video/background_segm.hpp"
+	"opencv2/features2d/features2d.hpp"
+	"opencv2/calib3d/calib3d.hpp"
+	"opencv2/objdetect/objdetect.hpp"
+	"opencv2/legacy/legacy.hpp"
+	"opencv2/legacy/compat.hpp"
+	"opencv2/legacy/blobtrack.hpp"
+	"opencv2/contrib/contrib.hpp"
+
+1355177996 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Classifiers/NormalBayes.cpp
+	"NormalBayes.hpp"
+
+1355175945 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Classifiers/NormalBayes.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	"Data.hpp"
+	"OpenCVClassifier.hpp"
+	<cv.h>
+	<highgui.h>
+	<ml.h>
+	<cvaux.h>
+
+1355177949 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Classifiers/OPF.cpp
+	"OPF.hpp"
+
+1363484210 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Classifiers/OPF.hpp
+	"OPF.h"
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	"Data.hpp"
+	"Classifier.hpp"
+
+1353774706 /arquivos/USP/ICs/IC 2/codigos/libComb2/LibOPF/include/OPF.h
+	<malloc.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<time.h>
+	<math.h>
+	<float.h>
+	<assert.h>
+	<sys/time.h>
+	<time.h>
+	"common.h"
+	"set.h"
+	"gqueue.h"
+	"subgraph.h"
+	"sgctree.h"
+	"realheap.h"
+
+1353774706 /arquivos/USP/ICs/IC 2/codigos/libComb2/LibOPF/include/util/common.h
+	<stdlib.h>
+	<stdio.h>
+	<malloc.h>
+	<math.h>
+	<string.h>
+	<limits.h>
+	<float.h>
+
+1353774706 /arquivos/USP/ICs/IC 2/codigos/libComb2/LibOPF/include/util/set.h
+	"common.h"
+
+1353774706 /arquivos/USP/ICs/IC 2/codigos/libComb2/LibOPF/include/util/gqueue.h
+	"common.h"
+
+1353774706 /arquivos/USP/ICs/IC 2/codigos/libComb2/LibOPF/include/util/subgraph.h
+	"common.h"
+	"set.h"
+
+1353774706 /arquivos/USP/ICs/IC 2/codigos/libComb2/LibOPF/include/util/sgctree.h
+	"gqueue.h"
+	"set.h"
+	"subgraph.h"
+
+1353774706 /arquivos/USP/ICs/IC 2/codigos/libComb2/LibOPF/include/util/realheap.h
+	"common.h"
+	"gqueue.h"
+
+1358812477 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Classifiers/OpenCVClassifier.cpp
+	"OpenCVClassifier.hpp"
+
+1357764039 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Classifiers/OpenCVClassifier.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	"Data.hpp"
+	"Classifier.hpp"
+	<cv.h>
+	<highgui.h>
+	<ml.h>
+	<cvaux.h>
+
+1363484653 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/DataStructures/Data.cpp
+	"Data.hpp"
+
+1353774131 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/libComb.cpp
+	"libComb.hpp"
+
+1353774128 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/libComb.hpp
+	"Classifier.hpp"
+	"Data.hpp"
+	"OPF.hpp"
+	"KNN.hpp"
+
+1374632188 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Bagging/Bagging.cpp
+	"Bagging.hpp"
+
+1374634195 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Bagging/Bagging.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	"Classifier.hpp"
+	"Data.hpp"
+
+1355709218 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/AdaBoost/AdaBoost.cpp
+	"AdaBoost.hpp"
+
+1354638909 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Bagging/AttributeBagging.cpp
+	"AttributeBagging.hpp"
+
+1354632363 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Bagging/AttributeBagging.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	"Classifier.hpp"
+	"Data.hpp"
+
+1355683414 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Classifiers/DecisionTree.cpp
+	"DecisionTree.hpp"
+
+1355683353 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Classifiers/DecisionTree.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	"Data.hpp"
+	"OpenCVClassifier.hpp"
+	<cv.h>
+	<highgui.h>
+	<ml.h>
+	<cvaux.h>
+
+1355682722 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Classifiers/MLP.cpp
+
+1355682732 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Classifiers/MLP.hpp
+
+1357765651 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/AdaBoost/AdaBoost.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	<cmath>
+	"Predictor.hpp"
+	"Classifier.hpp"
+	"Data.hpp"
+
+1364445698 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Bagging/RBBagging.cpp
+	"RBBagging.hpp"
+
+1357764375 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Predictor.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	"Data.hpp"
+
+1374634277 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/AdaBoost/AdaBoostM1.cpp
+	"AdaBoostM1.hpp"
+
+1374634138 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/AdaBoost/AdaBoostM1.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	<cmath>
+	<random>
+	<array>
+	<iostream>
+	<vector>
+	<iterator>
+	"Predictor.hpp"
+	"Classifier.hpp"
+	"Data.hpp"
+
+1357937112 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/DataStructures/ConfusionMatrix.hpp
+	<cstdio>
+	<iostream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	"Data.hpp"
+
+1363484689 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/DataStructures/ConfusionMatrix.cpp
+	"ConfusionMatrix.hpp"
+
+1357765468 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Tests/tests.cpp
+	"tests.hpp"
+
+1357765450 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Tests/tests.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	<cmath>
+	"Predictor.hpp"
+	"Data.hpp"
+
+1364443544 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Bagging/RBBagging.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	<random>
+	<ctime>
+	"Classifier.hpp"
+	"Data.hpp"
+	"Bagging.hpp"
+
+1359052763 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Algoritmo1.cpp
+	"Algoritmo1.hpp"
+
+1362441490 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Algoritmo1.hpp
+	<cstdio>
+	<iostream>
+	<iomanip>
+	<cstdlib>
+	"Classifier.hpp"
+	"Data.hpp"
+	"ConfusionMatrix.hpp"
+
+1362441641 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Algoritmo2.hpp
+	<cstdio>
+	<iostream>
+	<iomanip>
+	<cstdlib>
+	"Classifier.hpp"
+	"Data.hpp"
+	"ConfusionMatrix.hpp"
+
+1362441712 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Algoritmo2.cpp
+	"Algoritmo2.hpp"
+
+1363452417 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Bagging/IRBagging.cpp
+	"IRBagging.hpp"
+
+1363315742 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Bagging/IRBagging.hpp
+	<cstdio>
+	<iostream>
+	<iomanip>
+	<cstdlib>
+	"Bagging.hpp"
+	"Data.hpp"
+
+1367176245 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Bagging/EBBagging.cpp
+	"EBBagging.hpp"
+
+1367176198 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Bagging/EBBagging.hpp
+	<cstdio>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+	<cstdlib>
+	<random>
+	<ctime>
+	"Classifier.hpp"
+	"Data.hpp"
+	"Bagging.hpp"
+
+1367411954 /arquivos/USP/ICs/IC 2/codigos/libComb2/include/Bagging/IRBaggingOver.hpp
+	<cstdio>
+	<iostream>
+	<iomanip>
+	<cstdlib>
+	"Bagging.hpp"
+	"Data.hpp"
+
+1367412918 source:/arquivos/USP/ICs/IC 2/codigos/libComb2/src/Bagging/IRBaggingOver.cpp
+	"IRBaggingOver.hpp"
+

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="include/AdaBoost/AdaBoost.hpp" open="0" top="0" tabpos="4">
+		<Cursor position="225" topLine="13" />
+	</File>
+	<File name="include/AdaBoost/AdaBoostM1.hpp" open="1" top="0" tabpos="7">
+		<Cursor position="969" topLine="34" />
+	</File>
+	<File name="include/Algoritmo1.hpp" open="0" top="0" tabpos="6">
+		<Cursor position="0" topLine="4" />
+	</File>
+	<File name="include/Algoritmo2.hpp" open="0" top="0" tabpos="4">
+		<Cursor position="374" topLine="28" />
+	</File>
+	<File name="include/Bagging/AttributeBagging.hpp" open="0" top="0" tabpos="3">
+		<Cursor position="255" topLine="15" />
+	</File>
+	<File name="include/Bagging/Bagging.hpp" open="0" top="0" tabpos="2">
+		<Cursor position="109" topLine="0" />
+	</File>
+	<File name="include/Bagging/EBBagging.hpp" open="1" top="0" tabpos="2">
+		<Cursor position="535" topLine="20" />
+	</File>
+	<File name="include/Bagging/IRBagging.hpp" open="0" top="0" tabpos="4">
+		<Cursor position="0" topLine="8" />
+	</File>
+	<File name="include/Bagging/RBBagging.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="58" topLine="26" />
+	</File>
+	<File name="include/Classifiers/Classifier.hpp" open="0" top="0" tabpos="2">
+		<Cursor position="460" topLine="13" />
+	</File>
+	<File name="include/Classifiers/DecisionTree.hpp" open="0" top="0" tabpos="7">
+		<Cursor position="193" topLine="21" />
+	</File>
+	<File name="include/Classifiers/KNN.hpp" open="0" top="0" tabpos="2">
+		<Cursor position="396" topLine="26" />
+	</File>
+	<File name="include/Classifiers/MLP.hpp" open="0" top="0" tabpos="1">
+		<Cursor position="270" topLine="23" />
+	</File>
+	<File name="include/Classifiers/NormalBayes.hpp" open="0" top="0" tabpos="3">
+		<Cursor position="644" topLine="20" />
+	</File>
+	<File name="include/Classifiers/OPF.hpp" open="0" top="0" tabpos="6">
+		<Cursor position="196" topLine="0" />
+	</File>
+	<File name="include/Classifiers/OpenCVClassifier.hpp" open="1" top="0" tabpos="4">
+		<Cursor position="249" topLine="22" />
+	</File>
+	<File name="include/DataStructures/ConfusionMatrix.hpp" open="0" top="0" tabpos="10">
+		<Cursor position="184" topLine="7" />
+	</File>
+	<File name="include/DataStructures/Data.hpp" open="0" top="0" tabpos="8">
+		<Cursor position="0" topLine="21" />
+	</File>
+	<File name="include/Predictor.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="272" topLine="3" />
+	</File>
+	<File name="include/Tests/tests.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="369" topLine="5" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="2270" topLine="90" />
+	</File>
+	<File name="src/AdaBoost/AdaBoost.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="2963" topLine="73" />
+	</File>
+	<File name="src/AdaBoost/AdaBoostM1.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="3320" topLine="143" />
+	</File>
+	<File name="src/Algoritmo1.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/Algoritmo2.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="4036" topLine="105" />
+	</File>
+	<File name="src/Bagging/AttributeBagging.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="1743" topLine="79" />
+	</File>
+	<File name="src/Bagging/Bagging.cpp" open="1" top="1" tabpos="6">
+		<Cursor position="3611" topLine="110" />
+	</File>
+	<File name="src/Bagging/EBBagging.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="3092" topLine="96" />
+	</File>
+	<File name="src/Bagging/IRBagging.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="2166" topLine="52" />
+	</File>
+	<File name="src/Bagging/RBBagging.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="2357" topLine="0" />
+	</File>
+	<File name="src/Classifiers/Classifier.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="src/Classifiers/DecisionTree.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="275" topLine="28" />
+	</File>
+	<File name="src/Classifiers/KNN.cpp" open="0" top="0" tabpos="8">
+		<Cursor position="482" topLine="8" />
+	</File>
+	<File name="src/Classifiers/MLP.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="1701" topLine="0" />
+	</File>
+	<File name="src/Classifiers/NormalBayes.cpp" open="0" top="0" tabpos="8">
+		<Cursor position="123" topLine="27" />
+	</File>
+	<File name="src/Classifiers/OPF.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="174" topLine="0" />
+	</File>
+	<File name="src/Classifiers/OpenCVClassifier.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="758" topLine="10" />
+	</File>
+	<File name="src/DataStructures/ConfusionMatrix.cpp" open="0" top="0" tabpos="11">
+		<Cursor position="483" topLine="25" />
+	</File>
+	<File name="src/DataStructures/Data.cpp" open="0" top="0" tabpos="9">
+		<Cursor position="3127" topLine="98" />
+	</File>
+	<File name="src/Tests/tests.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="3" />
+	</File>
+	<File name="src/libComb.cpp" open="0" top="0" tabpos="12">
+		<Cursor position="22" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

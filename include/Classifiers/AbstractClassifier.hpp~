@@ -1,0 +1,10 @@
+#ifndef H_ABSTACT_CLASSIFIER_LIBCOMB
+#define H_ABSTACT_CLASSIFIER_LIBCOMB
+
+class AbstractClassifier{
+	public:
+		virtual void train(Data *trainData) = 0;
+		virtual void predict(Data *data) = 0;
+}; 
+
+#endif
