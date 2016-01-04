@@ -21,11 +21,11 @@ class Bagging: public Classifier{
 		Combinator * combine;
 
 		Data generateBootstrap();
-        Bagging();
+	        Bagging();
 
 	public:
-        Bagging(Classifier *classifier, int nClassifiers, int bootstrapSize);
-        Bagging(Data *trainData, Classifier *classifier, int nClassifiers, int bootstrapSize);
+	        Bagging(Classifier *classifier, int nClassifiers, int bootstrapSize);
+	        Bagging(Data *trainData, Classifier *classifier, int nClassifiers, int bootstrapSize);
 		Bagging(Classifier **classifiers, int nClassifiers, int bootstrapSize);
 		Bagging(Data *trainData, Classifier **classifiers, int nClassifiers, int bootstrapSize);
 		~Bagging();

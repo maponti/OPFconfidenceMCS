@@ -1,6 +1,7 @@
 #include "Data.hpp"
 #include "OPFScore.hpp"
 #include <iostream>
+#include <fstream>
 
 static void opf_OPFClassifyingScore(Subgraph *sgtrain, Subgraph *sg, float **minLabel)
 {
@@ -88,7 +89,6 @@ OPFScore::~OPFScore()
 }
 
 
-
 void OPFScore::predict(Data *data)
 {
 	Subgraph *g = data2Subgraph(data);
@@ -109,6 +109,8 @@ void OPFScore::predict(Data *data)
 		data->setClassificationLabel(cntSamples, g->node[cntSamples].label);
 	}
 	DestroySubgraph(&g);
+
+	//this->predictedData = data->clone();
 }
 
 float OPFScore::getScore(int node, int cls) const 
@@ -151,4 +153,22 @@ OPFScore * OPFScore::clone() const
     return new OPFScore();
 }
 
+void OPFScore::writeScores()
+{
+	if (!hasScore()) return;
 
+	ofstream filescores;
+	filescores.open("scores_classification.txt");
+
+	int p; // classes 
+	int i; // instances
+	for (i = 0; i < scoreSize; i++) {
+		filescores << i << "\t";
+		for (p = 0; p < scoresNumClasses; p++) 
+		{ 
+			filescores << scores[i][p] << " ";	
+		}
+		filescores << "\n";
+	}
+	filescores.close();
+}

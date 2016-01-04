@@ -40,7 +40,7 @@ LibOPF/lib/libOPF.a:
 	@cd LibOPF ; make libOPF
 
 run:
-	$(OUT)
+	$(OUT) 0.2 ./bin/Banana.opf
 
 clean:
 	rm -f $(OBJS) $(OUT)

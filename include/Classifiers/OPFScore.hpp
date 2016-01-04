@@ -15,13 +15,14 @@ class OPFScore : public OPF
 	public:
 		OPFScore();
 		OPFScore(Data *data);
-        ~OPFScore();
+        	~OPFScore();
 
 		void predict(Data *data);
 
 		float getScore(int index, int label) const;
 		bool hasScore() const;
 		void destroyScores();
+		void writeScores();
 		OPFScore * clone() const;
 
 };

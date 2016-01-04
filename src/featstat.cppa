@@ -1,0 +1,56 @@
+#include "OPF.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main (int argc, char *argv[]) {
+
+
+	Subgraph *sg = ReadSubgraph(argv[1]);
+	int M = sg->nfeats;
+	int N = sg->nnodes;
+	int i,j;
+
+	float **Features = new float*[N];
+	int *Labels = new int[N];
+	float *fDiff = new float[M];
+	float *KLd = new float[M];
+	for (i = 0; i < N; ++i) {
+		Features[i] = new float[M];
+	}
+
+	for (i = 0; i < N; i++){
+		for (j = 0; j < M; j++) {
+			Features[i][j] = sg->node[i].feat[j];
+		}
+		Labels = sg->node[i].label;
+	}
+
+	double means[2];
+	double vars[2];
+	means[0] = 0, means[1] = 0;
+	vars[0] = 0, vars[1] = 0;
+	int ind[M]
+	for (j = 0; j < M; j++) {	
+		for (i = 0; i < N; i++) {
+			means[sg->node[i].label-1] += sg->node[i].feat[j]
+		}
+		for (i = 0; i < N; i++) {
+			vars[sg->node[i].label-1] += pow(sg->node[i].feat[j]-means[sg->node[i].label-1], 2);
+		}
+		vars[0] = sqrt(vars[0]);
+		vars[1] = sqrt(vars[1]);
+		fDiff[j] = fabs(means[0]-means[1]);
+		KLd[j] = log(vars[1]/vars[0]) + ( (pow(vars[1],2) + pow(means[0]-means[1],2)) / (2*pow(vars[1],2)) ) - (1/2);
+	}	
+
+	for (i = 0; i < N; ++i) {
+		delete[] Features[i];
+	}
+	delete[] Features;
+	delete[] Labels;
+	delete[] fDiff; 
+	delete[] KLd;
+
+	return 0;
+}

@@ -12,6 +12,7 @@
 #include "IRBagging.hpp"
 #include "RBBagging.hpp"
 #include "EBBagging.hpp"
+#include "SBagging.hpp"
 #include "IRBaggingOver.hpp"
 #include "Combinator.hpp"
 #include <string>
@@ -118,8 +119,8 @@ bool OPFToData(const std::string & opf_filename, const std::string & train, cons
     Subgraph *aux = 0, * dtrain = 0, *deval = 0, *dtest = 0;
 
     opf_NormalizeFeatures(opf);
-    opf_SplitSubgraph(opf, &aux, &dtest, 0.3f );
-    opf_SplitSubgraph(aux, &dtrain, &deval, 0.25f / 0.3f );
+    opf_SplitSubgraph(opf, &aux, &dtest, 0.5f );
+    opf_SplitSubgraph(aux, &dtrain, &deval, 0.4f );
 
 
     if(!otrain.good() || !oeval.good() || !otest.good() || !oaux.good()) return false;
@@ -210,29 +211,40 @@ int main(int argc, char **argv)
     
     std::vector<std::string> bases_full{ "skin.opf" };
     std::vector<std::string> bases_EB;
+//    std::vector<double> acc_opf;
     
-    for (int b = 1; b < argc; b++) {
+    float percEns = atof(argv[1]);
+    
+    for (int b = 2; b < argc; b++) {
 	  bases_EB.push_back(argv[b]);
     }
 
-//     std::vector<std::string> bases_EB{"CircleGaussian5.opf","DifficultTwoAnomalies.opf","DifficultTwoNormal.opf","masses1.opf", "GreenCoverage.opf"};
+    if (!OPFToData(bases_EB[0], "temp_train.dat", "temp_eval.dat", "temp_test.dat", "temp_trainf.dat"))
+              exit(EXIT_FAILURE);
+	
+    Data train("temp_train.dat"), eval("temp_eval.dat"), test("temp_test.dat"), trainf("temp_trainf.dat");
+
+//    std::vector<std::string> bases_EB{"CircleGaussian5.opf","DifficultTwoAnomalies.opf","DifficultTwoNormal.opf","masses1.opf", "GreenCoverage.opf"};
 //    std::vector<std::string> bases_EB{"suborbital40.opf"};
 
     std::vector<double> acc_opf;
     std::vector<double> acc_average;
     std::vector<double> acc_waverage;
+    std::vector<double> acc_waverages;
     std::vector<double> acc_vote;
     std::vector<double> acc_wvote;
-
 
     for (const auto & base : bases_EB)
     {
         std::cout << "Running dataset " << base << " with EBBagging\n";
-        for (const auto & size : {20, 40, 80})
+	
+        
+        for (const auto & size : {10, 50, 100, 200})
         {
             acc_opf.clear();
             acc_average.clear();
             acc_waverage.clear();
+            acc_waverages.clear();
             acc_vote.clear();
             acc_wvote.clear();
 
@@ -243,10 +255,24 @@ int main(int argc, char **argv)
 
                 if (!OPFToData(base, "temp_train.dat", "temp_eval.dat", "temp_test.dat", "temp_trainf.dat"))
                     exit(EXIT_FAILURE);
+		
                 Data train("temp_train.dat"), eval("temp_eval.dat"), test("temp_test.dat"), trainf("temp_trainf.dat");
                 
-                WeightedAverage wa(&eval);
-                EBBagging bag_wavg(&classifier, size);
+		float bite = ((float)train.getNSamples())*percEns; 
+		
+		test.writeData();
+
+		OPFScore classifier_opf;
+		classifier_opf.train(&trainf);
+		classifier_opf.predict(&test);
+		classifier_opf.writeScores();
+		ConfusionMatrix<MULTIPLE> cm2(&test);
+		acc_opf.push_back(cm2.acc());
+		//std::cout << "Accuracy " << cm2.acc() << "\n";
+		
+		WeightedAverage wa(&eval);
+                //EBBagging bag_wavg(&classifier, size);
+                Bagging bag_wavg(&classifier, size, bite);
                 bag_wavg.setCombinator(&wa);
                 bag_wavg.train(&train);
                 bag_wavg.predict(&test);
@@ -254,15 +280,19 @@ int main(int argc, char **argv)
                 acc_waverage.push_back(cm.acc());
 		std::cout << "-";
 
-                OPF classifier_opf;
-                classifier_opf.train(&trainf);
-                classifier_opf.predict(&test);
-                ConfusionMatrix<MULTIPLE> cm2(&test);
-                acc_opf.push_back(cm2.acc());
+		WeightedAverage was(&eval);
+                //EBBagging bag_wavg(&classifier, size);
+                SBagging bag_wavgs(&classifier, size);
+                bag_wavgs.setCombinator(&was);
+                bag_wavgs.train(&train);
+                bag_wavgs.predict(&test);
+                ConfusionMatrix<MULTIPLE> cm6(&test);
+                acc_waverages.push_back(cm6.acc());
 		std::cout << "-";
 
-                WeightedVote wv(&eval);
-                EBBagging bag_wvote(&opf_classifier, size);
+		WeightedVote wv(&eval);
+                //EBBagging bag_wvote(&opf_classifier, size);
+                Bagging bag_wvote(&opf_classifier, size, bite);
                 bag_wvote.setCombinator(&wv);
                 bag_wvote.train(&train);
                 bag_wvote.predict(&test);
@@ -271,7 +301,8 @@ int main(int argc, char **argv)
  		std::cout << "-";
                
                 Average av_comb;
-                EBBagging bag_avg(&classifier, size);
+                //EBBagging bag_avg(&classifier, size);
+                Bagging bag_avg(&classifier, size, bite);
                 bag_avg.setCombinator(&av_comb);
                 bag_avg.train(&train);
                 bag_avg.predict(&test);
@@ -279,30 +310,35 @@ int main(int argc, char **argv)
                 acc_average.push_back(cm4.acc());
 		std::cout << "-";
 
-                EBBagging bag_vote(&opf_classifier, size);
+                //EBBagging bag_vote(&opf_classifier, size);
+                Bagging bag_vote(&opf_classifier, size, bite);
                 bag_vote.train(&train);
                 bag_vote.predict(&test);
                 ConfusionMatrix<MULTIPLE> cm5(&test);
                 acc_vote.push_back(cm5.acc());
 		std::cout << "-.";
 		std::cout << flush;
+
           }
           double avg, dp;
           extract_average(acc_opf, avg, dp);
           std::cout << "\nOPF: " << avg << "+-" << dp << "\n";
             
-          extract_average(acc_average, avg, dp);
-          std::cout << "Average: " << avg << "+-" << dp << "\n";
-            
-          extract_average(acc_waverage, avg, dp);
-          std::cout << "Weighted average: " << avg << "+-" << dp << "\n";
-            
           extract_average(acc_vote, avg, dp);
           std::cout << "Majority voting: " << avg << "+-" << dp << "\n";
-            
+
+	  extract_average(acc_average, avg, dp);
+          std::cout << "Average: " << avg << "+-" << dp << "\n";
+	    
           extract_average(acc_wvote, avg, dp);
           std::cout << "Weighted majority voting: " << avg << "+-" << dp << std::endl;
-         
+	  
+	  extract_average(acc_waverage, avg, dp);
+          std::cout << "Weighted average: " << avg << "+-" << dp << "\n";
+
+	  extract_average(acc_waverages, avg, dp);
+          std::cout << "Weighted average Smote: " << avg << "+-" << dp << "\n";
+	  
         }
     }
 

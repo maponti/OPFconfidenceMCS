@@ -6,12 +6,11 @@ UTIL=util
 
 CC=gcc
 
-FLAGS=  -O3 -Wall
-
+FLAGS= -O3 -Wall
 
 INCFLAGS = -I$(INCLUDE) -I$(INCLUDE)/$(UTIL)
 
-all: libOPF opf_split opf_accuracy opf_train opf_classify opf_learn opf_distance opf_info opf_fold opf_merge opf_cluster opf_knn_classify statistics txt2opf
+all: libOPF opf_split opf_accuracy opf_train opf_classify opf_learn opf_distance opf_info opf_fold opf_merge opf_cluster opf_knn_classify featstat statistics txt2opf
 
 libOPF: libOPF-build
 	echo "libOPF.a built..."
@@ -71,6 +70,9 @@ statistics:
 
 txt2opf: libOPF
 	$(CC) $(FLAGS) $(INCFLAGS) tools/src/txt2opf.c  -L./lib -o tools/txt2opf -lOPF -lm
+
+featstat: libOPF
+	g++ $(FLAGS) $(INCFLAGS) src/featstat.cpp -L./lib -o bin/featstat -lOPF -lm
 
 util: $(SRC)/$(UTIL)/common.c $(SRC)/$(UTIL)/set.c $(SRC)/$(UTIL)/gqueue.c $(SRC)/$(UTIL)/realheap.c $(SRC)/$(UTIL)/sgctree.c $(SRC)/$(UTIL)/subgraph.c
 	$(CC) $(FLAGS) $(INCFLAGS) -c $(SRC)/$(UTIL)/common.c -o $(OBJ)/common.o

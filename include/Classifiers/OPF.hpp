@@ -19,14 +19,16 @@ extern "C"{
 
 class OPF: public Classifier{
 	protected:
-        Data *trainData;
+	        Data *trainData;
+		//Data *predictedData;
 		Subgraph* subgraph;
+
 		Subgraph* data2Subgraph(Data *data);
 	
 	public:
-        OPF();
+	       OPF();
 		OPF(Data *data);
-        ~OPF();
+	       ~OPF();
 
 		void train(Data *trainData);
 		void predict(Data *data);
